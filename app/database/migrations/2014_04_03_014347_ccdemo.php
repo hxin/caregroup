@@ -64,14 +64,15 @@ class Ccdemo extends Migration {
 
 		//
 		Schema::create('messages', function($table){
+			$table->bigIncrements('message_id');
 			$table->bigInteger('user_id')->unsigned();
 			$table->bigInteger('friend_id')->unsigned();
 			$table->string('content', 100);
 			$table->enum('status', array('SEEN', 'NOT_SEEN'))->default('NOT_SEEN');
 			$table->timestamps();
 
-			$table->foreign('user_id')->references('id')->on('users');
-			$table->foreign('friend_id')->references('id')->on('users');
+			#$table->foreign('user_id')->references('id')->on('users');
+			#$table->foreign('friend_id')->references('id')->on('users');
 
 			$table->primary(array('user_id', 'friend_id'));
 		});
