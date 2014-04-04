@@ -1,0 +1,295 @@
+/* desert scheme ported from vim to google prettify */
+pre.prettyprint { display: block; background-color: #333 }
+pre .nocode { background-color: none; color: #000 }
+pre .str { color: #ffa0a0 } /* string  - pink */
+pre .kwd { color: #f0e68c; font-weight: bold }
+pre .com { color: #87ceeb } /* comment - skyblue */
+pre .typ { color: #98fb98 } /* type    - lightgreen */
+pre .lit { color: #cd5c5c } /* literal - darkred */
+pre .pun { color: #fff }    /* punctuation */
+pre .pln { color: #fff }    /* plaintext */
+pre .tag { color: #f0e68c; font-weight: bold } /* html/xml tag    - lightyellow */
+pre .atn { color: #bdb76b; font-weight: bold } /* attribute name  - khaki */
+pre .atv { color: #ffa0a0 } /* attribute value - pink */
+pre .dec { color: #98fb98 } /* decimal         - lightgreen */
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+@media print {
+  pre.prettyprint { background-color: none }
+  pre .str, code .str { color: #060 }
+  pre .kwd, code .kwd { color: #006; font-weight: bold }
+  pre .com, code .com { color: #600; font-style: italic }
+  pre .typ, code .typ { color: #404; font-weight: bold }
+  pre .lit, code .lit { color: #044 }
+  pre .pun, code .pun { color: #440 }
+  pre .pln, code .pln { color: #000 }
+  pre .tag, code .tag { color: #006; font-weight: bold }
+  pre .atn, code .atn { color: #404 }
+  pre .atv, code .atv { color: #060 }
+}
+
+body {
+    font-family: 'Open sans', Arial, sans-serif;
+    background-color: #eff0f4;
+    color: #445160;
+    margin: 0 0 60px 0;
+}
+
+#header {
+    display: block;
+    width: 740px;
+    margin: auto;
+    padding-left: 220px;
+    height: 44px;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+}
+
+#mainmenu {
+    height: 44px;
+    border-bottom: 1px solid #445160;
+}
+
+#mainmenu a {
+    font-size: 13px;
+    display: block;
+    float: left;
+    height: 40px;
+    border-bottom: 4px solid transparent;
+    margin: 0 24px 0 0;
+    color: #b2c6e1;
+    font-weight: 700;
+}
+
+#mainmenu a:hover {
+    text-decoration: none;
+    color: #445160;
+}
+
+#mainmenu a.selected {
+    color: #445160;
+    border-bottom: 4px solid #445160;
+}
+
+#mainmenu a:active {
+    color: #445160;
+}
+
+#footer {
+    display: block;
+    width: 960px;
+    margin: auto;
+    background-color: #fff;
+}
+
+#container {
+    display: block;
+    width: 960px;
+    margin: auto;
+}
+
+#sidebar {
+    display: block;
+    width: 200px;
+    float:left;
+}
+
+#content {
+    margin-left: 220px;
+}
+
+a.logo {
+    display: block;
+    width: 34px;
+    height: 27px;
+    background-image: url('/img/logo.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+a.logo:hover {
+    background-position: left -27px;
+}
+
+
+ul#navigation {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*font-size: 12px;*/
+}
+
+ul#navigation li {
+    margin: 0;
+    padding: 0;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    font-size: 14px;
+}
+
+ul#navigation li ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul#navigation li ul li {
+    margin: 0;
+    padding: 0;
+    margin-left: 24px;
+    margin-top: 0em!important;
+    margin-bottom: 0em!important;
+    font-size: 12px;
+    line-height: 2;
+}
+
+ul#navigation li ul li:first-child {
+    margin-top: 0.8em!important;
+}
+
+p {
+    /*baseline 24px*/
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 1.33;
+    font-weight: 700;
+    margin-top: 1.33em;
+    margin-bottom: 0.665em;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 0.665em;
+}
+
+h4 {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 700;
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+}
+
+ul {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+}
+
+.syn, blockquote {
+    display: block;
+    background-color: #fff;
+    padding: 7px 9px;
+    font-family: monospace;
+    -moz-border-radius: 4px; /*FF1+*/
+    -webkit-border-radius: 4px; /*Saf3+,Chrome*/
+    border-radius: 4px; /*Opera10.5,IE 9*/
+    font-size: 12px;
+    line-height: 2;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-weight: 700;
+    margin-left: 0;
+    margin-right: 0;
+    white-space: pre;
+}
+
+.note {
+    display: block;
+    padding: 12px 9px;
+    -moz-border-radius: 4px; /*FF1+*/
+    -webkit-border-radius: 4px; /*Saf3+,Chrome*/
+    border-radius: 4px; /*Opera10.5,IE 9*/
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #fdf5e4;
+}
+
+.prettyprint {
+    -moz-border-radius: 4px; /*FF1+*/
+    -webkit-border-radius: 4px; /*Saf3+,Chrome*/
+    border-radius: 4px; /*Opera10.5,IE 9*/
+    background-color: #1f2a36!important;
+    border: none!important;
+    padding: 12px!important;
+}
+
+code {
+    background-color: #dddee1;
+    padding: 2px 4px;
+    border-bottom: 2px solid #ccc;
+}
+
+
+a {
+    color: #6699cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+table tr td,
+table tr th {
+    padding: 6px;
+    text-align: left;
+    border-bottom: 1px solid #fff;
+}
+
+a.button {
+    display: block;
+    float: left;
+    background-color: #6699cc;
+    color: #fff;
+    text-align: center;
+    -moz-border-radius: 6px; /*FF1+*/
+    -webkit-border-radius: 6px; /*Saf3+,Chrome*/
+    border-radius: 6px; /*Opera10.5,IE 9*/
+    padding: 7px 20px;
+    margin: 0 20px 0 0;
+    width: 300px;
+}
+
+a.button:hover {
+    text-decoration: none;
+}
+

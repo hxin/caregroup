@@ -1,0 +1,46 @@
+curl -X POST -H "Content-Type: application/json" -d '{"email":"test"}' localhost/CCDEMO/public/is_email_exists
+curl -X POST -H "Content-Type: application/json" -d '{"email":"test","pwd":"test"}' localhost/CCDEMO/public/check_login
+curl -X POST -H "Content-Type: application/json" -d '{"firstname":"test","lastname":"test","email":"test","pwd":"test"}' localhost/CCDEMO/public/create_account
+
+
+curl -X POST -H "Content-Type: application/json" -d '{"email":"test"}' http://ccdemo-mourad.rhcloud.com/CCDEMO/public/is_email_exists
+curl -X POST -H "Content-Type: application/json" -d '{"email":"test","pwd":"test"}' http://ccdemo-mourad.rhcloud.com/CCDEMO/public/check_login
+curl -X POST -H "Content-Type: application/json" -d '{"firstname":"test","lastname":"test","email":"test","pwd":"test"}' http://ccdemo-mourad.rhcloud.com/CCDEMO/public/create_account
+
+
+This is the list of services developped and deployed on the cloud until this moment , they are tested also under stress test.
+The input depends on functionalities you want to develop in your app.
+The Output follow an enhanced type of response that could be easly extended.
+
+
+http://ccdemo-mourad.rhcloud.com/CCDEMO/public/is_email_exists
+input 	: json {"email":"test"}
+outpout : json {'code','message','details'}	
+
+
+http://ccdemo-mourad.rhcloud.com/CCDEMO/public/check_login
+input 	: json {"email","pwd"}
+outpout : json {'code','message','details'}	
+
+http://ccdemo-mourad.rhcloud.com/CCDEMO/public/create_account
+input 	: json {"firstname","lastname","email","pwd"}
+outpout : json {'code','message','details'}
+
+http://ccdemo-mourad.rhcloud.com/CCDEMO/public/upload_picture
+input 	: post {"email","picture"}
+outpout : json {'code','message','details'}
+
+http://ccdemo-mourad.rhcloud.com/CCDEMO/public/get_picture
+input 	: json {"email","pwd"}
+outpout : json {'code','message','details'} , or the image itself if it passes the authentication
+
+
+To test this service use can use CURL here is some examples :
+curl -X POST -H "Content-Type: application/json" -d '{"email":"test"}' http://ccdemo-mourad.rhcloud.com/CCDEMO/public/is_email_existscurl -
+
+curl -X POST -H "Content-Type: application/json" -d '{"email":"test","pwd":"test"}' http://ccdemo-mourad.rhcloud.com/CCDEMO/public/check_login
+
+curl -X POST -H "Content-Type: application/json" -d '{"firstname":"test","lastname":"test","email":"test","pwd":"test"}' http://ccdemo-mourad.rhcloud.com/CCDEMO/public/create_account
+
+curl -X POST -H "Content-Type: application/json" -d '{"email":"test","pwd":"test"}' http://ccdemo-mourad.rhcloud.com/CCDEMO/public/get_picture
+
